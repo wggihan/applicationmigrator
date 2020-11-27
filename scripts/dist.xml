@@ -1,0 +1,28 @@
+<assembly>
+    <id>dist</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <files>
+        <file>
+            <source>${project.basedir}/scripts/migrator.sh</source>
+            <outputDirectory>WSO2_API_Migration-Client</outputDirectory>
+            <fileMode>0755</fileMode>
+        </file>
+        <file>
+            <source>${project.basedir}/scripts/migrator.bat</source>
+            <outputDirectory>WSO2_API_Migration-Client</outputDirectory>
+            <fileMode>0755</fileMode>
+        </file>
+    </files>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>WSO2_API_Migration-Client</outputDirectory>
+            <includes>
+                <include>migrator.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
